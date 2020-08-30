@@ -15,4 +15,4 @@ The Process happens in 7 steps:
 Below is the Architecture Diagram containing the whole Distributed Deep Learning Pipeline:
 ![Architecture-DistributedDL](https://github.com/DeathReaper0965/distributed-deeplearning/tree/master/images/Architecture-DistributedDL.png)
 
-Made with ❤️ by Praneet Pabolu
+Made with ❤️ &nbsp; by Praneet Pabolu
