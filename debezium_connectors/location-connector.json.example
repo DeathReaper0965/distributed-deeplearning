@@ -1,0 +1,20 @@
+{
+  "name": "location-connector",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "tasks.max": "10",
+    "plugin.name": "wal2json",
+    "database.hostname": "localhost",
+    "database.port": "5432",
+    "database.user": "postgres",
+    "database.password": "",
+    "database.dbname" : "location_pg1",
+    "database.server.name": "LOCATION_SERVER",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "key.converter.schemas.enable":"false",
+    "value.converter.schemas.enable": "false",
+    "slot.name" : "location_slot",
+    "decimal.handling.mode": "double"
+  }
+}

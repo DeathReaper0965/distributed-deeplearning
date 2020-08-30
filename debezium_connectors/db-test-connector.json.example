@@ -1,0 +1,20 @@
+{
+  "name": "db-test-connector",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "tasks.max": "1",
+    "plugin.name": "wal2json",
+    "database.hostname": "localhost",
+    "database.port": "5432",
+    "database.user": "praneetpabolu",
+    "database.password": "",
+    "database.dbname" : "api_pg",
+    "database.server.name": "DB_TEST_SERVER",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "key.converter.schemas.enable":"false",
+    "value.converter.schemas.enable": "false",
+    "slot.name" : "api_slot",
+    "decimal.handling.mode": "double"
+  }
+}
