@@ -12,7 +12,7 @@ The Process happens in 7 steps:
 6. Once the required predictions are made, all the data is pushed into [Apache Druid](https://github.com/apache/druid) where further processing takes place.
 7. The data present in Druid is now very powerful and can be used for making personalized predictions, cancellation probabilities, time-series forecasting etc.
 
-Below is the Architecture Diagram containing the whole Distributed Deep Learning Pipeline:
+<h4>Architecture Diagram containing the whole Distributed Deep Learning Pipeline:</h4>
 
 ![Architecture-DistributedDL](https://github.com/DeathReaper0965/distributed-deeplearning/blob/master/images/Architecture-DistributedDL.png?raw=true)
 
