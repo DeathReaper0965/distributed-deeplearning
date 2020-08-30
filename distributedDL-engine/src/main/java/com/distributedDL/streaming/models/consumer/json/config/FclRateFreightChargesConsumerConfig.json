@@ -1,0 +1,37 @@
+{
+	"packageName": "com.distributedDL.streaming.models.consumer",
+	"className": "FclRateFreightChargesConsumerModel",
+	"parentClassName": "AppConsumerModel",
+	
+	"fields": [
+		{"field_name": "id", "field_type": "String"},
+		{"field_name": "file_id", "field_type": "String"},
+		{"field_name": "origin_port_id", "field_type": "String"},
+		{"field_name": "origin_main_port_id", "field_type": "String"},
+		{"field_name": "destination_port_id", "field_type": "String"},
+		{"field_name": "destination_main_port_id", "field_type": "String"},
+		{"field_name": "shipping_line_id", "field_type": "String"},
+		{"field_name": "supplier_id", "field_type": "String"},
+		{"field_name": "added_by_id", "field_type": "String"},
+		{"field_name": "container_size", "field_type": "String"},
+		{"field_name": "container_type", "field_type": "String"},
+		{"field_name": "commodity_type", "field_type": "String"},
+		{"field_name": "total_price", "field_type": "Double"},
+		{"field_name": "currency", "field_type": "String"},
+		{"field_name": "start_date", "field_type": "Object"},
+		{"field_name": "end_date", "field_type": "Object"},
+		{"field_name": "is_gri", "field_type": "Boolean"},
+		{"field_name": "gri_remarks", "field_type": "Object"},
+		{"field_name": "sheet_type", "field_type": "String"},
+		{"field_name": "source", "field_type": "String"},
+		{"field_name": "is_deleted", "field_type": "Boolean"},
+		{"field_name": "deleted_by_source", "field_type": "String"},
+		{"field_name": "deleted_by_id", "field_type": "String"},
+		{"field_name": "deleted_at", "field_type": "Date"},
+		{"field_name": "payment_term", "field_type": "String"},
+		{"field_name": "shipper_id", "field_type": "String"},
+		{"field_name": "has_local_charges", "field_type": "Boolean"},
+		{"field_name": "created_at", "field_type": "Date"},
+		{"field_name": "updated_at", "field_type": "Date"}
+	]
+}

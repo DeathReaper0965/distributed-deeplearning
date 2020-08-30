@@ -1,0 +1,20 @@
+{
+	"packageName": "com.distributedDL.streaming.models.consumer",
+	"className": "OrganizationOrganizationsConsumerModel",
+	"parentClassName": "AppConsumerModel",
+	
+	"fields": [
+		{"field_name": "id", "field_type": "String"},
+		{"field_name": "serial_id", "field_type": "Integer"},
+		{"field_name": "business_name", "field_type": "String"},
+		{"field_name": "short_name", "field_type": "String"},
+		{"field_name": "about", "field_type": "String"},
+		{"field_name": "account_type", "field_type": "String"},
+		{"field_name": "website", "field_type": "String"},
+		{"field_name": "logo", "field_type": "String"},
+		{"field_name": "status", "field_type": "String"},
+		{"field_name": "mongo_id", "field_type": "String"},
+		{"field_name": "created_at", "field_type": "Date"},
+		{"field_name": "updated_at", "field_type": "Date"}
+	]
+}

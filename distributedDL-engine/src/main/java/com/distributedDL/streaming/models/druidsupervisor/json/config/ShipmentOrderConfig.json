@@ -1,0 +1,110 @@
+{
+
+    "supervisor_name": "shipment_order_supervisor_ftl_test",
+    "dataSource": "shipment_wip",
+    "topic": "SHIPMENT_SERVER.public.shipment_orders.out",
+    "replicas": 2,
+    "bootStrapServers": "localhost:9092",
+
+    "dimensions": [
+        {
+            "name": "shipment_uid",
+            "type": "long"
+        },
+        {
+            "name": "shipment_id",
+            "type": "string"
+        },
+        {
+            "name": "shipment_value",
+            "type": "float"
+        },
+        {
+            "name": "actual_sailing_date",
+            "type": "string"
+        },
+        {
+            "name": "bl_count",
+            "type": "long"
+        },
+        {
+            "name": "exact_commodity",
+            "type": "string"
+        },
+        {
+            "name": "container_size",
+            "type": "string"
+        },
+        {
+            "name": "container_type",
+            "type": "string"
+        },
+        {
+            "name": "shipment_creation_date",
+            "type": "string"
+        },
+        {
+            "name": "detention_days_at_destination",
+            "type": "long"
+        },
+        {
+            "name": "detention_days_at_origin",
+            "type": "long"
+        },
+        {
+            "name": "estimated_sailing_date",
+            "type": "string"
+        },
+        {
+            "name": "hs_code",
+            "type": "long"
+        },
+        {
+            "name": "quantity",
+            "type": "long"
+        },
+        {
+            "name": "source",
+            "type": "string"
+        },
+        {
+            "name": "status",
+            "type": "string"
+        },
+        {
+            "name": "origin_port",
+            "type": "string"
+        },
+        {
+            "name": "origin_main_port",
+            "type": "string"
+        },
+        {
+            "name": "destination_port",
+            "type": "string"
+        },
+        {
+            "name": "destintion_main_port",
+            "type": "string"
+        },
+        {
+            "name": "shipping_line",
+            "type": "string"
+        },
+        {
+            "name": "freight_forwarder",
+            "type": "string"
+        },
+        {
+            "name": "enagagement_owner",
+            "type": "string"
+        },
+        {
+            "name": "operations_owner",
+            "type": "string"
+        }
+    ],
+
+    "metrics": []
+
+}

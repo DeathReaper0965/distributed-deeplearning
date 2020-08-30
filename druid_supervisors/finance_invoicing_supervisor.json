@@ -1,0 +1,55 @@
+{
+  "type": "kafka",
+  "dataSchema": {
+    "dataSource": "finance_invoicing",
+    "parser": {
+      "type": "string",
+      "parseSpec": {
+        "format": "json",
+        "timestampSpec": {
+          "column": "created_at",
+          "format": "auto"
+        },
+        "dimensionsSpec": {
+            "dimensions": [
+                { "name": "org_business_name", "type": "string" },
+                { "name": "org_iec", "type": "string" },
+                { "name": "org_gst", "type": "string" },
+                { "name": "org_converted_at", "type": "string" },
+                { "name": "org_account_type", "type": "string" },
+                { "name": "org_inc_id", "type": "long" },
+                { "name": "org_is_shipping_line", "type": "string" },
+                { "name": "org_registration_type", "type": "string" },
+                { "name": "org_signup_city", "type": "string" },
+                { "name": "org_is_ssp", "type": "string" },
+                { "name": "org_type", "type": "string" },
+                { "name": "org_user_email", "type": "string" },
+                { "name": "org_user_name", "type": "string" },
+                { "name": "org_user_phone_no", "type": "string" },
+                { "name": "finance_invoice_due", "type": "double" }
+            ]
+        }
+      }
+    },
+    "metricsSpec" : [],
+    "granularitySpec": {
+      "type": "uniform",
+      "segmentGranularity": "DAY",
+      "queryGranularity": "NONE",
+      "rollup": false
+    }
+  },
+  "tuningConfig": {
+    "type": "kafka",
+    "reportParseExceptions": false
+  },
+  "ioConfig": {
+    "topic": "FINANCE_SERVER.public.finance_invoices.out",
+    "replicas": 2,
+    "taskDuration": "PT10M",
+    "completionTimeout": "PT20M",
+    "consumerProperties": {
+      "bootstrap.servers": "localhost:9092"
+    }
+  }
+}

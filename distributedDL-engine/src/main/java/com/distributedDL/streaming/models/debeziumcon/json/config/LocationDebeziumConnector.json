@@ -1,0 +1,11 @@
+{
+    "connectorName": "location-connector",
+    "tasksMax": "10",
+    "dbHost": "localhost",
+    "dbPort": "5432",
+    "dbUsername": "postgres",
+    "dbPassword": "",
+    "dbName": "distributedDL_location_pg1",
+    "dbServerName": "LOCATION_SERVER",
+    "slotName": "location_slot"
+}

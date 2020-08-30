@@ -1,0 +1,26 @@
+{
+	"packageName": "com.distributedDL.streaming.models.consumer",
+	"className": "FinanceInvoiceDocumentsConsumerModel",
+	"parentClassName": "AppConsumerModel",
+	
+	"fields": [
+		{"field_name": "id", "field_type": "String"},
+		{"field_name": "invoice_id", "field_type": "String"},
+		{"field_name": "admin_id", "field_type": "String"},
+		{"field_name": "file_name", "field_type": "String"},
+		{"field_name": "file_type", "field_type": "String"},
+		{"field_name": "url", "field_type": "String"},
+		{"field_name": "desc", "field_type": "String"},
+		{"field_name": "invoice_no", "field_type": "String"},
+		{"field_name": "vendor_invoice_amount", "field_type": "Integer"},
+		{"field_name": "uploaded_at", "field_type": "Date"},
+		{"field_name": "active", "field_type": "Boolean"},
+		{"field_name": "verification_status", "field_type": "String"},
+		{"field_name": "rejected_at", "field_type": "Date"},
+		{"field_name": "verified_at", "field_type": "Date"},
+		{"field_name": "is_proforma", "field_type": "Boolean"},
+		{"field_name": "created_at", "field_type": "Date"},
+		{"field_name": "updated_at", "field_type": "Date"},
+		{"field_name": "mongo_id", "field_type": "String"}
+	]
+}

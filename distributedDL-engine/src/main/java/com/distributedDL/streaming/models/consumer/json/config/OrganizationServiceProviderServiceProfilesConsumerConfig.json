@@ -1,0 +1,12 @@
+{
+	"packageName": "com.distributedDL.streaming.models.consumer",
+	"className": "OrganizationServiceProviderServiceProfilesConsumerModel",
+	"parentClassName": "AppConsumerModel",
+	
+	"fields": [
+		{"field_name": "id", "field_type": "String"},
+		{"field_name": "organization_id", "field_type": "String"},
+		{"field_name": "created_at", "field_type": "Date"},
+		{"field_name": "updated_at", "field_type": "Date"}
+	]
+}

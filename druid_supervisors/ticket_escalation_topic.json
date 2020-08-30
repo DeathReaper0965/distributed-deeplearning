@@ -1,0 +1,42 @@
+{
+  "type": "kafka",
+  "dataSchema": {
+    "dataSource": "ticket_escalations",
+    "parser": {
+      "type": "string",
+      "parseSpec": {
+        "format": "json",
+        "timestampSpec": {
+          "column": "created_at",
+          "format": "auto"
+        },
+        "dimensionsSpec": {
+            "dimensions": [
+                { "name": "ticket_id", "type": "string" },
+                { "name": "reasons", "type": "string" }
+            ]
+        }
+      }
+    },
+    "metricsSpec" : [],
+    "granularitySpec": {
+      "type": "uniform",
+      "segmentGranularity": "DAY",
+      "queryGranularity": "NONE",
+      "rollup": false
+    }
+  },
+  "tuningConfig": {
+    "type": "kafka",
+    "reportParseExceptions": false
+  },
+  "ioConfig": {
+    "topic": "API_PG_SERVER.public.ticket_escalation_reasons.out",
+    "replicas": 2,
+    "taskDuration": "PT10M",
+    "completionTimeout": "PT20M",
+    "consumerProperties": {
+      "bootstrap.servers": "localhost:9092"
+    }
+  }
+}

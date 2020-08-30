@@ -1,0 +1,13 @@
+{
+	"packageName": "com.distributedDL.streaming.models.consumer",
+	"className": "DataMappingCurrencyConversionHistoricalValuesConsumerModel",
+	"parentClassName": "AppConsumerModel",
+	
+	"fields": [
+		{"field_name": "id", "field_type": "String"},
+		{"field_name": "currency_conversion_id", "field_type": "String"},
+		{"field_name": "time", "field_type": "Date"},
+		{"field_name": "value", "field_type": "Double"},
+		{"field_name": "mongo_id", "field_type": "String"}
+	]
+}

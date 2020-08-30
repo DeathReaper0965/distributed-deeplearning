@@ -1,0 +1,11 @@
+{
+    "connectorName": "mongo-dump-connector",
+    "tasksMax": "10",
+    "dbHost": "localhost",
+    "dbPort": "5432",
+    "dbUsername": "postgres",
+    "dbPassword": "",
+    "dbName": "temp_mongo_dump",
+    "dbServerName": "MONGO_DUMP_SERVER",
+    "slotName": "mongo_dump_slot"
+}

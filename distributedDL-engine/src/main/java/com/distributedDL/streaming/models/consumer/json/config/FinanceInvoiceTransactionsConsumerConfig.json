@@ -1,0 +1,25 @@
+{
+	"packageName": "com.distributedDL.streaming.models.consumer",
+	"className": "FinanceInvoiceTransactionsConsumerModel",
+	"parentClassName": "AppConsumerModel",
+	
+	"fields": [
+		{"field_name": "id", "field_type": "String"},
+		{"field_name": "invoice_id", "field_type": "String"},
+		{"field_name": "master_transaction_id", "field_type": "String"},
+		{"field_name": "updated_by_id", "field_type": "String"},
+		{"field_name": "amount", "field_type": "Double"},
+		{"field_name": "bank", "field_type": "String"},
+		{"field_name": "transaction_id", "field_type": "String"},
+		{"field_name": "transaction_mode", "field_type": "String"},
+		{"field_name": "currency", "field_type": "String"},
+		{"field_name": "status", "field_type": "String"},
+		{"field_name": "created_at", "field_type": "Date"},
+		{"field_name": "updated_at", "field_type": "Date"},
+		{"field_name": "mongo_id", "field_type": "String"},
+		{"field_name": "tds_cert_url", "field_type": "String"},
+		{"field_name": "filing_type", "field_type": "String"},
+		{"field_name": "assessment_year", "field_type": "Integer"},
+		{"field_name": "organization_user_id", "field_type": "String"}
+	]
+}

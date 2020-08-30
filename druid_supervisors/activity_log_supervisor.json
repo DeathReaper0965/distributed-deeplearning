@@ -1,0 +1,53 @@
+{
+  "type": "kafka",
+  "dataSchema": {
+    "dataSource": "activity_logs",
+    "parser": {
+      "type": "string",
+      "parseSpec": {
+        "format": "json",
+        "timestampSpec": {
+          "column": "created_at",
+          "format": "auto"
+        },
+        "dimensionsSpec": {
+            "dimensions": [
+                { "name": "activity_log_time", "type": "string" },
+                { "name": "call_log_output", "type": "string" },
+                { "name": "call_log_reason", "type": "string" },
+                { "name": "activity_log_created_at", "type": "string" },
+                { "name": "activity_log_description", "type": "string" },
+                { "name": "activity_log_inc_id", "type": "long" },
+                { "name": "organisation_user_name", "type": "string" },
+                { "name": "organisation_user_email", "type": "string" },
+                { "name": "organisation_user_phone_no", "type": "string" },
+                { "name": "organisation_business_name", "type": "string" },
+                { "name": "bucket_name", "type": "string" },
+                { "name": "tag_name", "type": "string" },
+                { "name": "admin_name", "type": "string" }
+            ]
+        }
+      }
+    },
+    "metricsSpec" : [],
+    "granularitySpec": {
+      "type": "uniform",
+      "segmentGranularity": "DAY",
+      "queryGranularity": "NONE",
+      "rollup": false
+    }
+  },
+  "tuningConfig": {
+    "type": "kafka",
+    "reportParseExceptions": false
+  },
+  "ioConfig": {
+    "topic": "MONGO_DUMP_SERVER.public.pg_acitivitylogs.out",
+    "replicas": 2,
+    "taskDuration": "PT10M",
+    "completionTimeout": "PT20M",
+    "consumerProperties": {
+      "bootstrap.servers": "localhost:9092"
+    }
+  }
+}

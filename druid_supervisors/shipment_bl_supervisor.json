@@ -1,0 +1,66 @@
+{
+  "type": "kafka",
+  "dataSchema": {
+    "dataSource": "shipment_bl",
+    "parser": {
+      "type": "string",
+      "parseSpec": {
+        "format": "json",
+        "timestampSpec": {
+          "column": "created_at",
+          "format": "auto"
+        },
+        "dimensionsSpec": {
+            "dimensions": [
+                { "name": "bl_id", "type": "string" },
+                { "name": "shipment_id", "type": "string" },
+                { "name": "draft_bl_acceptance_status", "type": "string" },
+                { "name": "bl_hold_reason", "type": "string" },
+                { "name": "bl_release_delay_reason", "type": "string" },
+                { "name": "containers_count", "type": "long" },
+                { "name": "bl_number", "type": "string" },
+                { "name": "bl_type", "type": "string" },
+                { "name": "bl_status", "type": "string" },
+                { "name": "bl_delay_responsible_party", "type": "string" },
+                { "name": "bl_delay_reason", "type": "string" },
+                { "name": "bl_release_status", "type": "string" },
+                { "name": "bl_created_at", "type": "string" },
+                { "name": "draft_bl_rejection_reason", "type": "string" },
+                { "name": "file_type", "type": "string" },
+                { "name": "amount", "type": "string" },
+                { "name": "shipment_created_at", "type": "string" },
+                { "name": "shipment_updated_at", "type": "string" },
+                { "name": "shipment_verified_at", "type": "string" },
+                { "name": "shipment_document_date", "type": "string" },
+                { "name": "shipment_admin_id", "type": "string" },
+                { "name": "organization_user_name", "type": "string" },
+                { "name": "organization_user_email", "type": "string" },
+                { "name": "organization_user_phone_no", "type": "string" },
+                { "name": "organization_business_name", "type": "string" },
+                { "name": "admin_name", "type": "string" }
+            ]
+        }
+      }
+    },
+    "metricsSpec" : [],
+    "granularitySpec": {
+      "type": "uniform",
+      "segmentGranularity": "DAY",
+      "queryGranularity": "NONE",
+      "rollup": false
+    }
+  },
+  "tuningConfig": {
+    "type": "kafka",
+    "reportParseExceptions": false
+  },
+  "ioConfig": {
+    "topic": "SHIPMENT_SERVER.public.combined_stream_bl.out",
+    "replicas": 2,
+    "taskDuration": "PT10M",
+    "completionTimeout": "PT20M",
+    "consumerProperties": {
+      "bootstrap.servers": "localhost:9092"
+    }
+  }
+}

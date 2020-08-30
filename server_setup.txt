@@ -1,0 +1,140 @@
+sudo apt update
+sudo apt install build-essential
+
+https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-18-04
+
+sudo apt install openjdk-8-jdk
+sudo dpkg -l openjdk*
+
+sudo update-alternatives --config java
+
+install postgres-11
+install postgis
+update postgres.conf=>
+
+=============================
+wal_level = logical
+max_replication_slots = 5
+max_wal_senders = 1
+--------------------------------
+
+update pg_hba.conf
+=============================
+local   all             postgres                                trust
+
+in .bashrc=>
+export PATH="/usr/lib/postgresql/11/bin:$PATH"
+
+install wal2json => https://github.com/eulerto/wal2json
+postgres_password=> xpZbS53UK9nY
+
+pg_recvlogical -d api_pg --slot api_pg_slot --create-slot -P wal2json
+pg_recvlogical -d api_pg --slot api_pg_slot --start -o pretty-print=1 -f -
+pg_recvlogical -d api_pg --slot test_slot --drop-slot
+
+psql -At -f example2.sql api_pg
+
+CREATE ROLE wal2json_replication REPLICATION LOGIN;
+
+max_wal_senders = 5
+max_replication_slots = 5
+
+local   replication     wal2json_replication                    trust
+host    replication     wal2json_replication    127.0.0.1/32    trust
+host    replication     wal2json_replication    ::1/128         trust
+
+sudo apt-get install librdkafka-dev libyajl-dev
+sudo apt-get install kafkacat
+
+curl -O http://packages.confluent.io/archive/5.0/confluent-oss-5.0.0-2.11.tar.gz
+
+mkdir debezium_con
+tar xzf confluent-oss-5.0.0-2.11.tar.gz -C debezium_con/
+
+wget https://repo1.maven.org/maven2/io/debezium/debezium-connector-postgres/0.8.2/debezium-connector-postgres-0.8.2-plugin.tar.gz
+cd <CONFLUENT_INST>/share/java
+mv ~/debezium-connector-postgres .
+
+========================
+/debezium_con/confluent-5.0.0/etc/kafka$ cat api-pg-connector.json
+{
+  "name": "api-pg-connector",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "tasks.max": "1",
+    "plugin.name": "wal2json",
+    "database.hostname": "localhost",
+    "database.port": "5432",
+    "database.user": "",
+    "database.password": "",
+    "database.dbname" : "api_pg",
+    "database.server.name": "API_PG_SERVER",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "key.converter.schemas.enable":"false",
+    "value.converter.schemas.enable": "false"
+  }
+}
+
+
+==============
+~/debezium_con/confluent-5.0.0$ bin/confluent start
+~/debezium_con/confluent-5.0.0$ bin/confluent status
+~/debezium_con/confluent-5.0.0$ bin/confluent load api-pg-connector -d etc/kafka/api-pg-connector.json
+~/debezium_con/confluent-5.0.0$ bin/confluent status api-pg-connector
+>> {"name":"api-pg-connector","connector":{"state":"RUNNING","worker_id":"10.0.0.55:8083"},"tasks":[{"state":"RUNNING","id":0,"worker_id":"10.0.0.55:8083"}],"type":"source"}
+
+~/debezium_con/confluent-5.0.0$ kafkacat -b localhost:9092 -L
+
+/debezium_con/confluent-5.0.0$ kafkacat -b localhost:9092 -t API_PG_SERVER.public<schema>.dgft_network_call_responses -C -f 'Key: %k\nValue: %s\n'
+kafkacat -b localhost:9092 -t API_PG_SERVER.public.ticket_escalation_reasons -C -f 'Key: %k\nValue: %s\n'
+
+===================
+New flink java package as a jar
+
+java -jar test_flink.jar
+===================
+
+Druid: 
+
+http://mirrors.estointernet.in/apache/incubator/druid/0.15.1-incubating/apache-druid-0.15.1-incubating-bin.tar.gz
+tar -xzf apache-druid-0.15.1-incubating-bin.tar.gz
+cd apache-druid-0.15.1-incubating
+
+Zookeeper:
+
+curl https://archive.apache.org/dist/zookeeper/zookeeper-3.4.11/zookeeper-3.4.11.tar.gz -o zookeeper-3.4.11.tar.gz
+tar -xzf zookeeper-3.4.11.tar.gz
+mv zookeeper-3.4.11 zk
+
+curl -O https://archive.apache.org/dist/kafka/2.1.0/kafka_2.12-2.1.0.tgz
+tar -xzf kafka_2.12-2.1.0.tgz
+
+==============
+Effectively using Druid
+==============
+
+rm -fr /tmp/confl*
+
+/etc/kafka/server.properties -> broker.id.generation.enable=true
+
+Tweak "/etc/kafka/server.properties" file for modifying your connector properties
+
+num.network.threads=10
+num.io.threads=27
+num.partitions=3
+num.recovery.threads.per.data.dir=3
+
+
+====================================
+Increase opening of number of files
+====================================
+
+ulimit -c unlimited
+
+
+=====================================
+Useful Commands
+=====================================
+
+bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --delete --group <group_name>

@@ -1,0 +1,11 @@
+{
+    "connectorName": "finance-connector",
+    "tasksMax": "10",
+    "dbHost": "localhost",
+    "dbPort": "5432",
+    "dbUsername": "postgres",
+    "dbPassword": "",
+    "dbName": "distributedDL_finance_pg",
+    "dbServerName": "FINANCE_SERVER",
+    "slotName": "finance_slot"
+}

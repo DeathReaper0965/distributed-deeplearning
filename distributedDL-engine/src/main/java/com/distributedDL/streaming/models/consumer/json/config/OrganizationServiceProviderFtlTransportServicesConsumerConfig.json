@@ -1,0 +1,17 @@
+{
+	"packageName": "com.distributedDL.streaming.models.consumer",
+	"className": "OrganizationServiceProviderFtlTransportServicesConsumerModel",
+	"parentClassName": "AppConsumerModel",
+	
+	"fields": [
+		{"field_name": "id", "field_type": "String"},
+		{"field_name": "service_profile_id", "field_type": "String"},
+		{"field_name": "status", "field_type": "String"},
+		{"field_name": "rejection_reason", "field_type": "String"},
+		{"field_name": "proof_document_url", "field_type": "String"},
+		{"field_name": "transporter_id", "field_type": "String"},
+		{"field_name": "haz_cargo", "field_type": "Boolean"},
+		{"field_name": "created_at", "field_type": "Date"},
+		{"field_name": "updated_at", "field_type": "Date"}
+	]
+}

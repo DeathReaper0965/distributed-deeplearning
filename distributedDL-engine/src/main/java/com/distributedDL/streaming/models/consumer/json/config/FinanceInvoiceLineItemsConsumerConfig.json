@@ -1,0 +1,27 @@
+{
+	"packageName": "com.distributedDL.streaming.models.consumer",
+	"className": "FinanceInvoiceLineItemsConsumerModel",
+	"parentClassName": "AppConsumerModel",
+	
+	"fields": [
+		{"field_name": "id", "field_type": "String"},
+		{"field_name": "invoice_id", "field_type": "String"},
+		{"field_name": "tax_id", "field_type": "String"},
+		{"field_name": "name", "field_type": "String"},
+		{"field_name": "tax_name", "field_type": "String"},
+		{"field_name": "tax_rate", "field_type": "Double"},
+		{"field_name": "tax_amount", "field_type": "Double"},
+		{"field_name": "quantity", "field_type": "Integer"},
+		{"field_name": "rate", "field_type": "Double"},
+		{"field_name": "amount", "field_type": "Double"},
+		{"field_name": "currency", "field_type": "String"},
+		{"field_name": "sac_code", "field_type": "String"},
+		{"field_name": "unit", "field_type": "String"},
+		{"field_name": "comments", "field_type": "String"},
+		{"field_name": "discount", "field_type": "Double"},
+		{"field_name": "discount_currency", "field_type": "String"},
+		{"field_name": "created_at", "field_type": "Date"},
+		{"field_name": "updated_at", "field_type": "Date"},
+		{"field_name": "mongo_id", "field_type": "String"}
+	]
+}

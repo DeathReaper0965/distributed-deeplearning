@@ -1,0 +1,11 @@
+{
+	"packageName": "com.distributedDL.streaming.models.consumer",
+	"className": "DataMappingCurrencyConversionsConsumerModel",
+	"parentClassName": "AppConsumerModel",
+	
+	"fields": [
+		{"field_name": "id", "field_type": "String"},
+		{"field_name": "to_currency", "field_type": "String"},
+		{"field_name": "mongo_id", "field_type": "String"}
+	]
+}

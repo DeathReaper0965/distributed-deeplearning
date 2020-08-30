@@ -1,0 +1,16 @@
+{
+	"packageName": "com.distributedDL.streaming.models.consumer",
+	"className": "OrganizationOrganizationUsersConsumerModel",
+	"parentClassName": "AppConsumerModel",
+	
+	"fields": [
+		{"field_name": "id", "field_type": "String"},
+		{"field_name": "organization_id", "field_type": "String"},
+		{"field_name": "user_id", "field_type": "String"},
+		{"field_name": "status", "field_type": "String"},
+		{"field_name": "designation", "field_type": "String"},
+		{"field_name": "mongo_ids", "field_type": "Jdbc4Array"},
+		{"field_name": "created_at", "field_type": "Date"},
+		{"field_name": "updated_at", "field_type": "Date"}
+	]
+}

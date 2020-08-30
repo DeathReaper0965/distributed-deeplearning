@@ -1,0 +1,13 @@
+{
+	"packageName": "com.distributedDL.streaming.models.producer",
+	"className": "FinanceOutstandingProducerModel",
+	"parentClassName": "AppProducerModel",
+	
+	"fields": [
+        {"field_name": "business_name", "field_type": "String"},
+        {"field_name": "due_date", "field_type": "Date"},
+        {"field_name": "inr_total_due_amount", "field_type": "Double"},
+        {"field_name": "invoice_type", "field_type": "String"},
+        {"field_name": "status", "field_type": "String"}
+	]
+}

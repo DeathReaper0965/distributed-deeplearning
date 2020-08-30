@@ -1,0 +1,34 @@
+{
+
+    "supervisor_name": "finance_invoices_outstanding_supervisor",
+    "dataSource": "finance_invoice_outstanding",
+    "topic": "STREAM_COMBINED_SERVER.public.outstanding.out",
+    "replicas": 2,
+    "bootStrapServers": "localhost:9092",
+
+    "dimensions": [
+        {
+            "name": "business_name",
+            "type": "string"
+        },
+        {
+            "name": "due_date",
+            "type": "long"
+        },
+        {
+            "name": "inr_total_due_amount",
+            "type": "double"
+        },
+        {
+            "name": "invoice_type",
+            "type": "string"
+        },
+        {
+            "name": "status",
+            "type": "string"
+        }
+    ],
+
+    "metrics": []
+
+}

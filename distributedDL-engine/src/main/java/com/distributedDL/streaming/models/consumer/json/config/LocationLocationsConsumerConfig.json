@@ -1,0 +1,38 @@
+{
+	"packageName": "com.distributedDL.streaming.models.consumer",
+	"className": "LocationLocationsConsumerModel",
+	"parentClassName": "AppConsumerModel",
+	
+	"fields": [
+		{"field_name": "id", "field_type": "String"},
+		{"field_name": "mongo_id", "field_type": "String"},
+		{"field_name": "name", "field_type": "String"},
+		{"field_name": "display_name", "field_type": "String"},
+		{"field_name": "type", "field_type": "String"},
+		{"field_name": "status", "field_type": "String"},
+		{"field_name": "continent_id", "field_type": "String"},
+		{"field_name": "trade_id", "field_type": "String"},
+		{"field_name": "country_id", "field_type": "String"},
+		{"field_name": "region_id", "field_type": "String"},
+		{"field_name": "city_id", "field_type": "String"},
+		{"field_name": "cluster_id", "field_type": "String"},
+		{"field_name": "port_id", "field_type": "String"},
+		{"field_name": "pincode_id", "field_type": "String"},
+		{"field_name": "latitude", "field_type": "String"},
+		{"field_name": "longitude", "field_type": "String"},
+		{"field_name": "loc", "field_type": "Object"},
+		{"field_name": "postal_code", "field_type": "String"},
+		{"field_name": "is_icd", "field_type": "Boolean"},
+		{"field_name": "is_airport", "field_type": "Boolean"},
+		{"field_name": "port_code", "field_type": "String"},
+		{"field_name": "inttra_code", "field_type": "String"},
+		{"field_name": "icd_ports", "field_type": "Jdbc4Array"},
+		{"field_name": "currency_code", "field_type": "String"},
+		{"field_name": "country_code", "field_type": "String"},
+		{"field_name": "mobile_country_code", "field_type": "String"},
+		{"field_name": "flag_icon_url", "field_type": "String"},
+		{"field_name": "flag_image_url", "field_type": "String"},
+		{"field_name": "created_at", "field_type": "Date"},
+		{"field_name": "updated_at", "field_type": "Date"}
+	]
+}

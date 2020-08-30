@@ -1,0 +1,23 @@
+{
+	"packageName": "com.distributedDL.streaming.models.consumer",
+	"className": "OrganizationUsersConsumerModel",
+	"parentClassName": "AppConsumerModel",
+	
+	"fields": [
+		{"field_name": "id", "field_type": "String"},
+		{"field_name": "name", "field_type": "String"},
+		{"field_name": "email", "field_type": "String"},
+		{"field_name": "mobile_number", "field_type": "String"},
+		{"field_name": "mobile_country_code", "field_type": "String"},
+		{"field_name": "mobile_verified", "field_type": "Boolean"},
+		{"field_name": "preferred_language", "field_type": "String"},
+		{"field_name": "preferred_currency", "field_type": "String"},
+		{"field_name": "birth_day", "field_type": "String"},
+		{"field_name": "birth_month", "field_type": "String"},
+		{"field_name": "birth_year", "field_type": "String"},
+		{"field_name": "alert_preferences", "field_type": "Jdbc4Array"},
+		{"field_name": "password_digest", "field_type": "String"},
+		{"field_name": "created_at", "field_type": "Date"},
+		{"field_name": "updated_at", "field_type": "Date"}
+	]
+}
